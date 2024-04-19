@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html id="html" lang="en">
+    <head>
+        <meta charset="="UTF-8>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <title id="title" text-align="center">Symplenote</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="icon" href="C:\Users\adhvi\Downloads\Symplenote.png" type="image">
+        <audio id="clicksound" src="C:\Users\adhvi\Downloads\Y2Mate.is - Keyboard press - Sound Effect-PXkIBbkbJCk-128k-1642338652334.mp3"></audio>
+    </head>
+    <body id="body" class="body">
+
+        <header id="titlebar">
+            <div class="center">
+                <input class="document-name customcolor" id="documentname" oninput="save(); play()" placeholder="Title" style="text-align: center"></input>
+            </div>
+
+            <div id="sidebarID" class="sidebar">
+                <div id="buttons" class="buttons">
+                    <button id="closebutton" class="closebutton customcolor" onclick="closeSidebar()" style="color: #e2b714"><span class="material-icons">close</span></button>
+                    <label id="uploadbutton" style="color: #e2b714" class="customcolor" for="upload"><span class="material-icons">file_upload</span></label>
+                    <input type="file" id="upload" class="customcolor"></input>
+                    <button id="downloadbutton" class="customcolor" onclick="download()"style="color: #e2b714"><span class="material-icons">file_download</span></button>
+
+                    <button id="createbutton" class="customcolor" style="color: #e2b714" onclick="createNew()"><span class="material-icons">note_add</span></button>
+                    <button value="save" id="savebutton" class="customcolor" style="color: #e2b714"><span class="material-icons" onclick="save()">save</span></button>
+
+                    <button class="innermenubuttons customcolor" style="color: #e2b714;" onclick="openAppearanceSidebar()"><span class="material-icons">lightbulb</span></button>
+                    <button class="innermenubuttons customcolor" style="color: #e2b714;" onclick="openColorSidebar()"><span class="material-icons">palette</span></button>
+                    <!-- <button class="innermenubuttons customcolor" style="color: #e2b714;" onclick="openSoundSidebar()"><span class="material-icons">volume_mute</span></button> -->
+                    <!-- <button class="innermenubuttons customcolor" style="color: #e2b714;" onclick="openInfoSidebar()"><span class="material-icons">info</span></button> -->
+                    <div id="infosidebarID" class="infosidebar">
+                        <button id="info" class="closebutton customcolor info" onclick="closeInfoSidebar()" style="color: #e2b714"><span class="material-icons">close</span></button>
+                        <p class="info customcolor">Symplenote is a minismalistic notetaking app created by Adhviklal Thoppe</p>
+                    </div>
+                    <div id="colorsidebarID" class="colorsidebar">
+                        <button id="customcolor" class="closebutton customcolor" onclick="closeColorSidebar()" style="color: #e2b714"><span class="material-icons">close</span></button>
+                        <button onclick="redColorChange(); save()" id="customcolor" style="color: #d82934"><span class="material-icons">circle</span></button>
+                        <button onclick="orangeColorChange(); save()" id="customcolor" style="color: #f66e0d"><span class="material-icons">circle</span></button>
+                        <button onclick="yellowColorChange(); save()" id="customcolor" style="color: #e2b714"><span class="material-icons">circle</span></button>
+                        <button onclick="greenColorChange(); save()" id="customcolor" style="color: #79a617"><span class="material-icons">circle</span></button>
+                        <button onclick="blueColorChange(); save()" id="customcolor" style="color: #007acc"><span class="material-icons">circle</span></button>                        
+                        <button onclick="purpleColorChange(); save()" id="customcolor" style="color: #be3c88"><span class="material-icons">circle</span></button>                        
+                        <button onclick="pinkColorChange(); save()" id="customcolor" style="color: #f37f83"><span class="material-icons">circle</span></button>
+                        <button onclick="brownColorChange(); save()" id="customcolor" style="color: #a77c5c"><span class="material-icons">circle</span></button>
+                        <button onclick="whiteColorChange(); save()" id="customcolor" style="color: #e1e1e1"><span class="material-icons">circle</span></button>
+                        <button onclick="blackColorChange(); save()" id="customcolor" style="color: #1e1e1e"><span class="material-icons">circle</span></button>   
+                    </div>
+                    <div id="appearancesidebarID" class="appearancesidebar">
+                        <button id="themechange" class="closebutton customcolor" onclick="closeAppearanceSidebar()" style="color: #e2b714"><span class="material-icons">close</span></button>
+                        <button class="customcolor" onclick="lightTheme(); save()" id="themechange" style="color: #e2b714"><span class="material-icons">light_mode</span></button>
+                        <button class="customcolor" onclick="darkTheme(); save()" id="themechange" style="color: #e2b714"><span class="material-icons">dark_mode</span></button>
+                    </div>
+                    <div id="soundsidebarID" class="soundsidebar">
+                        <button id="soundbutton" class="closebutton customcolor" onclick="closeSoundSidebar()" style="color: #e2b714"><span class="material-icons">close</span></button>
+                        <button class="customcolor" onclick="unmutevol(); save()" id="soundbutton" style="color: #e2b714"><span class="material-icons">volume_up</span></button>
+                        <button class="customcolor" onclick="mutevol(); save()" id="soundbutton" style="color: #e2b714"><span class="material-icons">volume_off</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button class="menubutton customcolor" style="color: #e2b714;" onclick="openSidebar()"><span class="material-icons">menu</span></button>
+            </div>
+        </header>
+
+        <main>
+            <textarea class="customcolor" id="text" oninput="save(); play()" onclick="closeSidebar()"></textarea>
+        </main>
+    </body>
+    <div class="cursor" id="cursor"></div>
+    <div class="caret" id="caret"></div>
+</html>
+
+<script src="script.js"></script>
